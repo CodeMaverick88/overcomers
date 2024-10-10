@@ -114,7 +114,7 @@ export default function Navbar() {
 
                                 {/* Centered menu items */}
                                 <div className="flex flex-col items-center space-y-6">
-                                    {menuItems.map((item:{name:string; href:string; submenu?:any[]}) => (
+                                    {menuItems.map((item:{name:string; href:string; submenu?:{name:string; href:string}[]}) => (
                                         <div key={item.name} className="w-64">
                                             {item?.submenu ? (
                                                 <div>

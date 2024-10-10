@@ -35,7 +35,7 @@ const services = [
     }
 ]
 
-function ServiceCard({ service, index }: { service: { color: string; name: string; time: string; description: string; icon: any; }, index: number }) {
+function ServiceCard({ service}: { service: { color: string; name: string; time: string; description: string; icon: any; }, index: number }) {
     const cardRef = useRef(null)
     const { scrollYProgress } = useScroll({
         target: cardRef,
