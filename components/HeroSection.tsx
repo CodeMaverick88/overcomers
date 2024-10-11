@@ -68,7 +68,13 @@ export default function ChurchHero() {
     }
 
     return (
-        <div className="flex flex-col lg:flex-row items-center justify-between px-2 py-10 md:px-8 md:py-20 bg-gray-950 overflow-hidden">
+        <div className="relative flex flex-col lg:flex-row items-center justify-between px-2 py-10 md:px-8 md:py-20 bg-gray-950 overflow-hidden">
+            <div
+                className="absolute inset-0 bg-cover bg-center z-0"
+                style={{ backgroundImage: "url('/church.jpg?height=1080&width=1920')" }}
+            >
+                <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+            </div>
             {/* Left side - Hero section */}
             <motion.div
                 className="w-full lg:w-1/2 space-y-8 z-10"
@@ -122,7 +128,7 @@ export default function ChurchHero() {
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
             >
-                <div className="absolute inset-0 bg-primary200 rounded-full transform scale-110 translate-x-1/4"></div>
+                <div className="absolute inset-0 bg-transaparent backdrop-blur-lg rounded-full transform scale-110 translate-x-1/4"></div>
                 <motion.div
                     className="relative z-10 rounded-lg bg-transparent overflow-hidden shadow-xl"
                     initial={{ scale: 0.9 }}

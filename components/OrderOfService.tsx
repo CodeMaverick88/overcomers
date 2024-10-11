@@ -89,9 +89,9 @@ export default function OrderOfServices() {
                         initial={{ opacity: 0, y: 50 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.5 }}
-                        className="text-center mt-12 border-r"
+                        className="text-center mt-12"
                     >
-                        <p className="text-xl text-muted-foreground mb-4">
+                        <p className="text-4xl text-balance tracking-tight leading-tight space-x-2 space-y-2  mb-4">
                             We welcome you to join us in worship and fellowship!
                         </p>
                         <motion.button
@@ -111,10 +111,10 @@ export default function OrderOfServices() {
                         >
                             Our Order of Services
                         </motion.h2>
-                        <motion.div
+                        {/* <motion.div
                             className="absolute left-4 w-0.5 bg-gray-300"
                             style={{ height: lineHeight, top: 0, bottom: 0 }}
-                        />
+                        /> */}
                         {services.map((service, index) => (
                             <ServiceCard key={index} service={service} index={index} />
                         ))}

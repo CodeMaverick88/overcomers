@@ -28,10 +28,10 @@ export default function EFamilyJoin() {
   }, [])
 
   return (
-    <section className="relative py-16 overflow-hidden">
+    <section className="py-16 overflow-hidden">
       <div 
         className="absolute inset-0 bg-cover bg-center z-0" 
-        style={{ backgroundImage: "url('/placeholder.svg?height=1080&width=1920')" }}
+        style={{ backgroundImage: "url('/efam.jpg?height=1080&width=1920')" }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-40"></div>
       </div>

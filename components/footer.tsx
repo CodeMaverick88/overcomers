@@ -65,15 +65,15 @@ export default function ModernChurchFooter() {
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-2">
               <li className="flex items-center">
-                <MapPin className="h-5 w-5 mr-2 text-primary" />
+                <MapPin className="h-5 w-5 mr-2 text-primary200" />
                 <span>Kikuyu, Kenya</span>
               </li>
               <li className="flex items-center">
-                <Mail className="h-5 w-5 mr-2 text-primary" />
+                <Mail className="h-5 w-5 mr-2 text-primary200" />
                 <a href="mailto:info@churchname.com" className="hover:text-primary transition-colors">info@churchname.com</a>
               </li>
               <li className="flex items-center">
-                <Phone className="h-5 w-5 mr-2 text-primary" />
+                <Phone className="h-5 w-5 mr-2 text-primary200" />
                 <a href="tel:+254123456789" className="hover:text-primary transition-colors">+254 123 456 789</a>
               </li>
             </ul>
