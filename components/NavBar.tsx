@@ -10,11 +10,13 @@ const menuItems = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '#' },
     { name: 'Services', href: '#' },
-    
+
 ]
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
+    const [width, setWidth] = useState(10)
+    const [isHovered, setIsHovered] = useState(false)
     const [mobileActiveSubmenu, setMobileActiveSubmenu] = useState<string | null>(null)
     const [desktopActiveSubmenu, setDesktopActiveSubmenu] = useState<string | null>(null)
 
@@ -26,14 +28,27 @@ export default function Navbar() {
         setDesktopActiveSubmenu(desktopActiveSubmenu === name ? null : name)
     }
 
+    function handleHover() {
+        if (isHovered) {
+
+            let witdhIN = setInterval(() => {
+                setWidth(width + 10)
+            }, 1000)
+
+            if (width == 100) {
+                clearInterval(witdhIN)
+            }
+        }
+    }
+
     return (
-        <nav className="bg-primary950 z-50 backdrop-blur-sm fixed w-full">
+        <nav className="bg-transparent z-50 backdrop-blur-lg fixed w-full">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-20">
                     {/* Logo */}
                     <div className="flex-shrink-0 flex items-center">
                         <span className="text-2xl font-bold text-gray-800">
-                            <Image src="/overcomers.jpg" width={100} height={100} alt="Overcomers logo"  className='rounded-full'/>
+                            <Image src="/overcomers.jpg" width={100} height={100} alt="Overcomers logo" className='rounded-full' />
 
                         </span>
                     </div>
@@ -44,9 +59,12 @@ export default function Navbar() {
                             <Link
                                 key={item.name}
                                 href={item.href}
-                                className="text-white  hover:text-primary700 hover:font-bold px-3 py-2 rounded-md text-sm font-medium"
+                                onFocus={handleHover}
+                                className="text-primary700 group  hover:bg-primary700 hover:text-white transition-background duration-300 hover:font-bold px-3 py-2 rounded-md text-sm font-medium"
                             >
                                 {item.name}
+
+                              
                             </Link>
                         ))}
                     </div>
@@ -93,7 +111,7 @@ export default function Navbar() {
                                     {/* Logo on the left */}
                                     <div className="flex-shrink-0">
                                         <span className="text-2xl font-bold text-gray-800">
-                                            <Image src="/overcomers.jpg" width={100} height={100} alt="Overcomers logo"  className='rounded-full'/>
+                                            <Image src="/overcomers.jpg" width={100} height={100} alt="Overcomers logo" className='rounded-full' />
 
                                         </span>
                                     </div>
@@ -114,7 +132,7 @@ export default function Navbar() {
 
                                 {/* Centered menu items */}
                                 <div className="flex flex-col items-center space-y-6">
-                                    {menuItems.map((item:{name:string; href:string; submenu?:{name:string; href:string}[]}) => (
+                                    {menuItems.map((item: { name: string; href: string; submenu?: { name: string; href: string }[] }) => (
                                         <div key={item.name} className="w-64">
                                             {item?.submenu ? (
                                                 <div>
@@ -189,7 +207,7 @@ export default function Navbar() {
                             <div className="pt-5 pb-6 px-5">
                                 <div className="flex items-center justify-between">
                                     <div className="text-2xl font-bold text-gray-800">
-                                    <Image src="/overcomers.jpg" width={100} height={100} alt="Overcomers logo"  className='rounded-full'/>
+                                        <Image src="/overcomers.jpg" width={100} height={100} alt="Overcomers logo" className='rounded-full' />
 
                                     </div>
                                     <motion.button
@@ -203,7 +221,7 @@ export default function Navbar() {
                                 </div>
                                 <div className="mt-6">
                                     <nav className="grid gap-y-8">
-                                        {menuItems.map((item:{name:string; href:string; submenu?:any[]}) => (
+                                        {menuItems.map((item: { name: string; href: string; submenu?: any[] }) => (
                                             <div key={item.name}>
                                                 {item.submenu ? (
                                                     <div>
