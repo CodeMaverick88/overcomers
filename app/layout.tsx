@@ -4,6 +4,7 @@ import { Inter, IBM_Plex_Serif } from "next/font/google"
 import "./globals.css"
 import Navbar from "@/components/NavBar";
 import ModernChurchFooter from "@/components/footer";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -52,6 +53,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <ModernChurchFooter />
+          <ScrollToTopButton />
         </main>
 
       </body>
