@@ -44,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.className}  antialiased scroll-smooth`}
+        className={`${inter.variable} ${ibmPlexSerif.variable}  antialiased scroll-smooth`}
 
       >
         <main className="w-full h-full overflow-hidden" style={{
