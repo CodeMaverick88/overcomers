@@ -1,10 +1,12 @@
 'use client'
-
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronUp, ChevronDown, Circle } from 'lucide-react'
 import { TextGenerateEffect } from './ui/text-generate-effect'
+import { Audiowide } from "next/font/google";
 import { Spotlight } from './ui/Spotlight'
+
+const AudiowideFont = Audiowide({ weight: "400", subsets: ["latin"], display: "swap" });
 
 const experiences = [
     {
@@ -12,7 +14,7 @@ const experiences = [
         description: 'Become part of a vibrant, supportive community of believers.',
         image: '/connecting_1_graphic.jpg?height=700&width=600',
         color: 'bg-blue-500',
-        spot:"blue",
+        spot: "blue",
         cta: 'Join Now',
     },
     {
@@ -20,7 +22,7 @@ const experiences = [
         description: 'Support our mission to spread love and hope around the world.',
         image: '/investmetn.jpeg?height=700&width=600',
         color: 'bg-green-500',
-        spot:"green",
+        spot: "green",
         cta: 'Donate',
     },
     {
@@ -28,7 +30,15 @@ const experiences = [
         description: 'Discover your unique gifts and serve in our various ministries.',
         image: '/mantles.jpg?height=700&width=600',
         color: 'bg-purple-500',
-        spot:"purple",
+        spot: "purple",
+        cta: 'Explore Ministries',
+    },
+    {
+        title: 'Find Your Space',
+        description: 'Discover your unique gifts and serve in our various ministries.',
+        image: '/mantles.jpg?height=700&width=600',
+        color: 'bg-yellow-500',
+        spot: "purple",
         cta: 'Explore Ministries',
     },
 ]
@@ -53,13 +63,35 @@ export default function ChurchExperienceTimeline() {
     }
 
     return (
-        <div className="w-full mx-auto relative space-y-10 p-6">
-            <h2 className="text-5xl w-80 flex items-end justify-end text-start right-0 font-bold  mb-8 tracking-wide  space-y-46leading-10 text-wrap">Start Your Experience with Our Church</h2>
-            <Spotlight
-                className="-top-10 right-0 md:right-10 md:-top-10"
-                fill={experiences[currentExperience].spot  ?? "blue"}
+        <div className={`w-full mx-auto relative space-y-10 p-6 ${AudiowideFont.className}`}>
+            {/* Background Image */}
+            <div
+                className="absolute inset-0 bg-cover bg-center"
+                style={{
+                    backgroundImage: "url('/efam.jpg?height=1080&width=1920')",
+                    filter: 'grayscale(100%)',
+                    zIndex: 0,
+                    height: '100%', // Ensure it fills the height
+                }}
             />
-            <div className="relative">
+    
+            {/* Overlay for opacity */}
+            <div
+                className="absolute inset-0 bg-black bg-opacity-40"
+                style={{ zIndex: 1 }}
+            />
+    
+            {/* Content */}
+            <div className="relative z-10">
+                <h2 className={`text-3xl w-70 flex items-center justify-between font-bold mb-8 tracking-wide leading-10 text-wrap ${AudiowideFont.className}`}>
+                    Start Your Experience with Our Church
+                </h2>
+    
+                <Spotlight
+                    className="-top-10 right-0 md:right-10 md:-top-10"
+                    fill={experiences[currentExperience].spot ?? "blue"}
+                />
+    
                 <AnimatePresence mode="wait">
                     <motion.div
                         key={currentExperience}
@@ -89,7 +121,7 @@ export default function ChurchExperienceTimeline() {
                         </div>
                     </motion.div>
                 </AnimatePresence>
-
+    
                 {/* Timeline */}
                 <div className="absolute left-0 top-0 bottom-0 w-1 bg-gray-200">
                     <motion.div
@@ -99,7 +131,7 @@ export default function ChurchExperienceTimeline() {
                         transition={{ duration: 10, ease: 'linear' }}
                     />
                 </div>
-
+    
                 {/* Navigation controls */}
                 <div className="absolute md:right-10 right-0 top-1/2 transform -translate-y-1/2 flex flex-col items-center space-y-4">
                     <motion.button
@@ -116,8 +148,7 @@ export default function ChurchExperienceTimeline() {
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.9 }}
                             onClick={() => setCurrentExperience(index)}
-                            className={`w-3 h-3 rounded-full ${index === currentExperience ? experiences[currentExperience].color : 'bg-gray-300'
-                                }`}
+                            className={`w-3 h-3 rounded-full ${index === currentExperience ? experiences[currentExperience].color : 'bg-gray-300'}`}
                         />
                     ))}
                     <motion.button
@@ -131,5 +162,6 @@ export default function ChurchExperienceTimeline() {
                 </div>
             </div>
         </div>
-    )
+    );
+    
 }
