@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Inter, IBM_Plex_Serif } from "next/font/google"
+import { Inter, IBM_Plex_Serif, Audiowide } from "next/font/google"
 import "./globals.css"
 import Navbar from "@/components/NavBar";
 import ModernChurchFooter from "@/components/footer";
@@ -21,9 +21,9 @@ const geistMono = localFont({
 
 
 const inter = Inter({ subsets: ["latin"], variable: '--font-inter' })
-const ibmPlexSerif = IBM_Plex_Serif({
+const ibmPlexSerif = Audiowide({
   subsets: ["latin"],
-  weight: ['400', '700'],
+  weight: "400",
   variable: '--font-ibm-plex-serif'
 })
 
