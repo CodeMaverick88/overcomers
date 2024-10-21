@@ -116,6 +116,7 @@ export default function OrderOfServices() {
                             style={{ height: lineHeight, top: 0, bottom: 0 }}
                         /> */}
                         {services.map((service, index) => (
+                            
                             <ServiceCard key={index} service={service} index={index} />
                         ))}
                     </div>
