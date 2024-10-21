@@ -17,9 +17,11 @@ const NavBar = () => {
         setOpenMenu(!openMenu);
     };
 
+    
+
     return (
         <div>
-            <div className="navbar fixed w-full z-50 transition-all duration-300">
+            <div className="navbar fixed w-full z-50 transition-all bg-transparent backdrop-blur-md duration-300">
                 <div className="container mx-auto px-3 py-3 flex items-center justify-between">
 
                     {/* Logo with Audiowide Font */}
