@@ -97,7 +97,7 @@ const NavBar = () => {
 
                             {/* Bottom Section - Bible Verse and Meeting Times */}
                             <div className="dropdown-bottom">
-                                <p className="verse text-white">"I can do all things through Christ who strengthens me." - Philippians 4:13</p>
+                                <p className="verse text-white">&quot;I can do all things through Christ who strengthens me.&quot; - Philippians 4:13</p>
                                 <p className="meeting-times text-white">Sundays: 10:00 AM | Wednesdays: 7:00 PM</p>
                             </div>
 
