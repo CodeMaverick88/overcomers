@@ -109,7 +109,7 @@ const Hero = () => {
       {/* Video background */}
       <motion.video
         ref={videoRef}
-        src="/My work.mp4"
+        src=""
         autoPlay
         loop
         muted
